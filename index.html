@@ -200,6 +200,13 @@
                 </div>
                 <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
                     <div class="col-lg-6">
+
+
+
+                        <!-- Mensaje de éxito/error -->
+                        <div id="statusMessage" class="d-none">
+                            <div class="text-center mb-3" id="statusText"></div>
+                        </div>
                         <!-- * * * * * * * * * * * * * * *-->
                         <!-- * * SB Forms Contact Form * *-->
                         <!-- * * * * * * * * * * * * * * *-->
@@ -207,29 +214,29 @@
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
-                        <form id="contactForm"  action="process_form.php" data-sb-form-api-token="API_TOKEN" method="POST">
+                        <form id="contactForm"  action="process_form.php" method="POST">
                             <!-- Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
                                 <label for="name">Nombre y apellido</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                             </div>
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                <input class="form-control" id="email" type="email" name="email" placeholder="name@example.com" data-sb-validations="required,email" />
                                 <label for="email">Correo electrónico</label>
                                 <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                 <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                             </div>
                             <!-- Phone number input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                <input class="form-control" id="phone" type="tel" name="phone"  placeholder="(123) 456-7890" data-sb-validations="required" />
                                 <label for="phone">Teléfono</label>
                                 <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                             </div>
                             <!-- Message input-->
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <textarea class="form-control" id="message"  name="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
                                 <label for="message">¿En qué podemos ayudarte?</label>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                             </div>
@@ -249,8 +256,40 @@
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
                             <div class="d-grid">
-                                <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit" style="background-color: #AA3E98">Enviar</button></div>
+                                <button class="btn btn-primary btn-xl" id="submitButton" type="submit" style="background-color: #AA3E98">Enviar</button>
+                            </div>
                         </form>
+
+                        <script>
+                            // Función para leer los parámetros de la URL
+                            function getUrlParameter(name) {
+                                name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                                var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+                                var results = regex.exec(location.search);
+                                return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+                            }
+
+                            document.addEventListener("DOMContentLoaded", function() {
+                                var status = getUrlParameter('status');
+                                var message = getUrlParameter('message');
+
+                                if (status && message) {
+                                    var statusMessage = document.getElementById('statusMessage');
+                                    var statusText = document.getElementById('statusText');
+
+                                    statusText.textContent = message;
+
+                                    if (status === 'success') {
+                                        statusMessage.classList.remove('d-none');
+                                        statusMessage.classList.add('text-success');
+                                    } else if (status === 'error') {
+                                        statusMessage.classList.remove('d-none');
+                                        statusMessage.classList.add('text-danger');
+                                    }
+                                }
+                            });
+                        </script>
+
                     </div>
                 </div>
                   <!--<<div class="row gx-4 gx-lg-5 justify-content-center">
@@ -269,6 +308,5 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <script src="js/scripts.js"></script>
 
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
