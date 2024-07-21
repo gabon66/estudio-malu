@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers .= "Content-type: text/html; charset=UTF-8\r\n";
 
     // Construir el cuerpo del correo
-    $email_body = "<h2>Nuevo mensaje de contacto</h2>";
+    $email_body = "<h2>Mensaje desde estudio-malu web </h2>";
     $email_body .= "<p><strong>Nombre y apellido:</strong> $name</p>";
     $email_body .= "<p><strong>Correo electrónico:</strong> $email</p>";
     $email_body .= "<p><strong>Teléfono:</strong> $phone</p>";
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     // Enviar el correo
-    if (mail($to, $subject, $message, $headers)) {
+    if (mail($to, $subject, $email_body, $headers)) {
         header("Location: index.html?status=success&message=Mensaje enviado exitosamente.#contact");
     } else {
         header("Location: index.html?status=error&message=Error al enviar el mensaje.#contact");
