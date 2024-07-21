@@ -54,7 +54,8 @@
                         <h2 class="text-black">Transformamos tus ideas en experiencias únicas!</h2> 
                     </br>
                          <!-- <hr class="divider divider-light color text-white" />-->
-                        <p class="text-black">Estudio Malu nace con el propósito de hacer más humana la forma en que trabajamos.</br> Nuestro objetivo es diseñar experiencias y productos digitales que realmente importan. 
+                        <p class="text-black">
+                            Estudio Malu nace con el propósito de hacer más humana la forma en que trabajamos.</br> Nuestro objetivo es diseñar experiencias y productos digitales que realmente importan.
                         </br>A medida que aplicamos más herramientas y tecnologías, a veces perdemos de vista lo más importante: trabajar para y con las personas. </br>En Estudio Malu, creemos que el éxito se basa en la conexión humana y la pasión por mejorar la vida de cada una de esas personas.
                         </p>
                         <!-- <a class="btn btn-light btn-xl" href="#services">Contactanos</a>-->
@@ -72,22 +73,25 @@
                 <div class="row gx-4 gx-lg-5">
                     <div class="col-lg-4 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                            <div class="mb-2"><i class="bi-people fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Clima y Cultura laboral</h3>
+                            </br>
                             <p class="text-muted mb-0">Ayudamos a mejorar el ambiente de trabajo y la cultura organizacional, proponiendo estrategias para un entorno más motivador, colaborativo y productivo.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+                            <div class="mb-2"><i class="bi-lightbulb fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Productos y Servicios</h3>
+                            </br>
                             <p class="text-muted mb-0">Ayudamos a las empresas a crear y gestionar productos y servicios exitosos mediante investigación, diseño, desarrollo ágil y optimización continua.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                            <div class="mb-2"><i class="bi-window fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Aplicaciones y Sitios web</h3>
+                            </br>
                             <p class="text-muted mb-0">Diseñamos y desarrollamos aplicaciones y sitios web con enfoque en la usabilidad y la funcionalidad,intuitivos y con experiencia positiva para los usuarios.</p>
                         </div>
                     </div>
@@ -103,7 +107,7 @@
                         <hr class="divider divider" />
                         <p class="text-black-75 mb-4">Nos adaptamos a las necesidades de cada cliente.
                             Somos flexibles, por eso podemos trabajar de manera presencial, remota o híbrida. 
-                            Cada proyecto es único, por lo que diseñamos soluciones a medida, personalizadas para cumplir con objetivos específicos.
+                            Cada proyecto es único, diseñamos soluciones a medida, personalizadas para cumplir con objetivos específicos.
                             Creemos en el poder del trabajo en equipo,codo a codo para asegurar el éxito de cada iniciativa. Fomentamos un ambiente de cooperación, transparencia y comunicación constante para lograr los mejores resultados.
                         </p>
                         
@@ -190,7 +194,7 @@
                     <div class="col-lg-8 col-xl-6 text-center">
                         <h2 class="mt-0">¿Nos juntamos a crear juntos?</h2>
                         <hr class="divider" />
-                        <p class="text-muted mb-5">estudiomalu.experiencia@gmail.com</p>
+                        <p class="text-muted mb-5">hola@estudio-malu.com / estudiomalu.experiencia@gmail.com</p>
                     </div>
                 </div>
                 <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
@@ -202,7 +206,7 @@
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <form id="contactForm"  action="process_form.php" data-sb-form-api-token="API_TOKEN">
                             <!-- Name input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
@@ -246,7 +250,8 @@
                             <!-- an error submitting the form-->
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
-                            <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit" style="background-color: #AA3E98">Enviar</button></div>
+                            <div class="d-grid">
+                                <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit" style="background-color: #AA3E98">Enviar</button></div>
                         </form>
                     </div>
                 </div>
@@ -262,16 +267,10 @@
         <footer class="bg-light py-5">
             <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2024 - estudio-malu </div></div>
         </footer>
-        <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- SimpleLightbox plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-        <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
