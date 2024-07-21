@@ -8,10 +8,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars($_POST['message']);
 
     // Configurar el correo
-    $to = "gabriel.adrian.felipe@gmail.com,strevezzaanaclara@gmail.com"; // Cambia esto a tu dirección de correo
+    $to = "gabriel.adrian.felipe@gmail.com , strevezzaanaclara@gmail.com"; // Cambia esto a tu dirección de correo
     $subject = "Nuevo mensaje de contacto de estudio-malu";
     $headers = "From: hola@estudio-malu.com\r\n";
-    $headers .= "Reply-To: $email\r\n";
+    $headers .= "Reply-To: ".$email."\r\n";
     $headers .= "Content-type: text/html; charset=UTF-8\r\n";
 
     // Construir el cuerpo del correo
